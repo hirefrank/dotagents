@@ -86,6 +86,7 @@ export async function scanMigration(opts: RootOptions): Promise<MigrationPlan> {
       { label: 'Claude commands', dir: path.join(roots.claudeRoot, 'commands') },
       { label: 'Factory commands', dir: path.join(roots.factoryRoot, 'commands') },
       { label: 'Codex prompts', dir: path.join(roots.codexRoot, 'prompts') },
+      { label: 'OpenCode commands', dir: path.join(roots.opencodeRoot, 'command') },
     ],
     hooks: [
       { label: 'Claude hooks', dir: path.join(roots.claudeRoot, 'hooks') },
@@ -94,6 +95,7 @@ export async function scanMigration(opts: RootOptions): Promise<MigrationPlan> {
     skills: [
       { label: 'Claude skills', dir: path.join(roots.claudeRoot, 'skills') },
       { label: 'Factory skills', dir: path.join(roots.factoryRoot, 'skills') },
+      { label: 'OpenCode skills', dir: path.join(roots.opencodeRoot, 'skill') },
     ],
     agents: [
       { label: 'Claude CLAUDE.md', file: path.join(roots.claudeRoot, 'CLAUDE.md') },
@@ -179,10 +181,12 @@ export async function scanMigration(opts: RootOptions): Promise<MigrationPlan> {
     { label: 'claude/commands', path: path.join(roots.claudeRoot, 'commands'), kind: 'dir' },
     { label: 'factory/commands', path: path.join(roots.factoryRoot, 'commands'), kind: 'dir' },
     { label: 'codex/prompts', path: path.join(roots.codexRoot, 'prompts'), kind: 'dir' },
+    { label: 'opencode/command', path: path.join(roots.opencodeRoot, 'command'), kind: 'dir' },
     { label: 'claude/hooks', path: path.join(roots.claudeRoot, 'hooks'), kind: 'dir' },
     { label: 'factory/hooks', path: path.join(roots.factoryRoot, 'hooks'), kind: 'dir' },
     { label: 'claude/skills', path: path.join(roots.claudeRoot, 'skills'), kind: 'dir' },
     { label: 'factory/skills', path: path.join(roots.factoryRoot, 'skills'), kind: 'dir' },
+    { label: 'opencode/skill', path: path.join(roots.opencodeRoot, 'skill'), kind: 'dir' },
     { label: 'claude/CLAUDE.md', path: path.join(roots.claudeRoot, 'CLAUDE.md'), kind: 'file' },
   ];
 
