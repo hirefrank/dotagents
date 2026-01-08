@@ -30,7 +30,7 @@ Global home affects all projects. Project folder only affects the current direct
 ## What it does
 
 - Keeps `.agents` as the source of truth.
-- Creates symlinks for Claude, Codex, and Factory.
+- Creates symlinks for Claude, Codex, Factory, and OpenCode.
 - Installs skills from a local path, git URL, or HTTPS URL.
 - Installs plugins from marketplaces.
 
@@ -51,6 +51,31 @@ Global home affects all projects. Project folder only affects the current direct
 `.agents/skills` → `~/.claude/skills`
 
 `.agents/skills` → `~/.factory/skills`
+
+`.agents/commands` → `~/.opencode/command`
+
+`.agents/skills` → `~/.opencode/skill`
+
+## Tool Support Matrix
+
+| Feature | Claude | Factory | Codex | OpenCode |
+|---------|--------|---------|-------|----------|
+| Instructions | ✅ | | | |
+| Commands | ✅ | ✅ | ✅ | ✅ |
+| Hooks | ✅ | ✅ | | |
+| Skills | ✅ | ✅ | | ✅ |
+
+### OpenCode Notes
+
+OpenCode support includes commands and skills. The following are **not** mapped:
+
+- **Hooks**: OpenCode uses config-based hooks in `opencode.json`, not a directory
+- **AGENTS.md**: OpenCode reads `AGENTS.md` from the project root natively. Use OpenCode's `instructions` config to point to `.agents/AGENTS.md` if needed:
+  ```json
+  {
+    "instructions": [".agents/AGENTS.md"]
+  }
+  ```
 
 ## Development
 
